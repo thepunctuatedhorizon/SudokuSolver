@@ -51,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //dispatchTakePictureIntent();
+        dispatchTakePictureIntent();
+
+
 
     }
 
@@ -86,9 +88,17 @@ public class MainActivity extends AppCompatActivity {
             galleryAddPic();
             setPic();
 
+
+            dispatchReaderIntent();
         }
     }
 
+    private void dispatchReaderIntent() {
+        Intent readerIntent = new Intent(this, ReaderActivity.class);
+        //Ensure that we know what we are doing!
+
+        startActivity(readerIntent);
+    }
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // Ensure that there's a camera activity to handle the intent
